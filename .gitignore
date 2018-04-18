@@ -1,0 +1,13 @@
+# OS
+Thumbs.db
+.DS_Store
+
+# Node modules
+node_modules/
+
+# Dist
+dist/*
+!dist/.keep
+
+# Logs
+*.log

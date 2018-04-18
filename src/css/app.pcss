@@ -1,0 +1,117 @@
+@import "./variables/custom-media.pcss";
+
+:root {
+  --default-font-family: 'BabyPopStd-EB', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+}
+
+html,
+body {
+  font-family: var(--default-font-family);
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  .layer {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .particles {
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 35%;
+    transform: translateY(-50%);
+
+    @media (--sp-viewport) {
+      width: 45%;
+      top: 50%;
+      left: 3%;
+    }
+  }
+
+  .chara {
+    position: absolute;
+    bottom: 40%;
+    right: 10%;
+    transform: translateY(50%);
+    width: 70%;
+
+    @media (--sp-viewport) {
+      right: -3%;
+      bottom: 40%;
+      width: 100%;
+    }
+  }
+}
+
+section.active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+
+  .buttons {
+    position: absolute;
+    right: 3%;
+    bottom: 7%;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    transform: rotate(-7deg);
+
+    @media (--sp-viewport) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 8px 15px;
+    color: #4383d8;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #4383d8;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+
+    &[data-disabled="true"] {
+      cursor: default;
+      color: #ccc;
+      border-color: #ccc;
+
+      &:hover {
+        color: #ccc;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    &:hover {
+      color: #fafafa;
+      background-color: #4383d8;
+    }
+  }
+}
